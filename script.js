@@ -1,6 +1,6 @@
 const display = document.getElementById("display");
 const question = document.getElementById("question");
-const startBtn = document.getElementById("start");
+const startBtn = document.getElementById("starts");
 const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
@@ -16,7 +16,7 @@ fetch("./texts.json")
   .then((res) => res.json())
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
-    question.innerHTML = questionText;
+   question.innerHTML = questionText;
   });
 
 // checks the user typed character and displays accordingly
@@ -107,7 +107,7 @@ const start = () => {
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
-    countdownOverlay.innerHTML = '<h1>${count}</h1>';
+    countdownOverlay.innerHTML = `<h1>${count}</h1>`;
 
     // finished timer
     if (count == 0) {
